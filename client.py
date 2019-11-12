@@ -1,7 +1,9 @@
 from socket import *
 
-HOST ='192.168.0.9'
-PORT=8000
+HOST ='' # Here you put the server IP. Eg: '192.168.0.2'  
+
+PORT=8000	# You can use any port you want, but client and
+			# server need to use the same
 
 s=socket(AF_INET, SOCK_STREAM) #SOCK_DGRAM->UDP
 s.connect((HOST,PORT))

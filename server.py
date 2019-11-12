@@ -1,14 +1,16 @@
 from socket import *
 
-HOST=''
-PORT=8000
+HOST='' #Empty, than the curl host will be the server
+
+PORT=8000 	#You can use any port you want, but client and
+			#server need to use the same
 
 s = socket(AF_INET,SOCK_STREAM)
 s.setsockopt(SOL_SOCKET,SO_REUSEADDR, 1)
 ip=gethostname()
 
 s.bind((HOST,PORT))
-s.listen(1) # how many connections it can receive at one time
+s.listen(1) # How many connections it can receive at one time
 conn, addr = s.accept()
 print("CONNECTED TO: ", addr," at IP: ", ip)  # tell us the address of the connected person
 
